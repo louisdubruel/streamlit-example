@@ -1,6 +1,8 @@
-import streamlit as st
+from collections import namedtuple
+import altair as alt
+import math
 import pandas as pd
-import numpy as np
+import streamlit as st
 
 # Load some sample data
 data = pd.DataFrame({
