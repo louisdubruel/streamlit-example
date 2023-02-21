@@ -2,7 +2,7 @@ from collections import namedtuple
 import pandas as pd
 import streamlit as st
 import numpy as np
-import plotly as px
+# import plotly as px
 
 # Load some sample data
 data = pd.DataFrame({
