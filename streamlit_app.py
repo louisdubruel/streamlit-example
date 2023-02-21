@@ -1,8 +1,28 @@
-from collections import namedtuple
-import altair as alt
-import math
-import pandas as pd
 import streamlit as st
+import pandas as pd
+import numpy as np
+import plotly.express as px
+
+# Load some sample data
+data = pd.DataFrame({
+    'name': ['Alice', 'Bob', 'Charlie', 'David', 'Eve'],
+    'age': [25, 32, 18, 47, 29],
+    'income': [50000, 70000, 30000, 90000, 60000],
+})
+
+# Set page title
+st.set_page_config(page_title='My Streamlit Dashboard')
+
+# Add a title
+st.title('My Streamlit Dashboard')
+
+# Add a table of the data
+st.write(data)
+
+# Add a histogram of the ages
+fig = px.histogram(data, x='age')
+st.plotly_chart(fig)
+
 
 """
 # Welcome to Streamlit!
@@ -13,7 +33,7 @@ If you have any questions, checkout our [documentation](https://docs.streamlit.i
 forums](https://discuss.streamlit.io).
 
 In the meantime, below is an example of what you can do with just a few lines of code:
-"""
+
 
 
 with st.echo(code_location='below'):
@@ -36,3 +56,5 @@ with st.echo(code_location='below'):
     st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500)
         .mark_circle(color='#0068c9', opacity=0.5)
         .encode(x='x:Q', y='y:Q'))
+        
+"""
